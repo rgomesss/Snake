@@ -106,14 +106,15 @@ while not morto:
          morto=1
 
     #Cria nova maca fora do corpo da serpente
-    if comida==0:
-        while True:
-            x1=randint(0,20)
-            y1=randint(0,20)
-            comidaXY=[int(x1*20)+10,int(y1*20)+120]
-            if snake.count(comidaXY)==0:
-                comida=1
-                break
+    if comida == 0:
+     while True:
+        x1 = randint(0, 20)
+        y1 = randint(0, 20)
+        comidaXY = [int(x1 * 20) + 10, int(y1 * 20) + 120]
+        if 10 <= comidaXY[0] <= COMPRIMENTOJANELA - 30 and 120 <= comidaXY[1] <= ALTURAJANELA - 30 and snake.count(comidaXY) == 0:
+            comida = 1
+            break
+
 
     #Insere a cabeca
     snake.insert(0,list(cabeca))
